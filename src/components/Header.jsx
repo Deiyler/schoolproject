@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Menu, MoonStar, Sun, X } from 'lucide-react'
 
@@ -11,6 +11,17 @@ const navItems = [
 
 function Header({ isLight, onToggleTheme }) {
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    if (!isOpen) {
+      return undefined
+    }
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [isOpen])
 
   return (
     <header
@@ -52,7 +63,7 @@ function Header({ isLight, onToggleTheme }) {
           <button
             type="button"
             onClick={onToggleTheme}
-            className={`rounded-xl border p-2 transition hover:scale-105 ${
+            className={`rounded-xl border p-2.5 transition hover:scale-105 active:scale-95 ${
               isLight
                 ? 'border-slate-300 bg-white/80 hover:bg-slate-200/80'
                 : 'border-white/20 bg-white/10 hover:bg-white/20'
@@ -64,7 +75,7 @@ function Header({ isLight, onToggleTheme }) {
           <button
             type="button"
             onClick={() => setIsOpen((prev) => !prev)}
-            className={`rounded-xl border p-2 md:hidden ${
+            className={`rounded-xl border p-2.5 active:scale-95 md:hidden ${
               isLight
                 ? 'border-slate-300 bg-white/80'
                 : 'border-white/20 bg-white/10'
@@ -77,30 +88,40 @@ function Header({ isLight, onToggleTheme }) {
       </div>
 
       {isOpen ? (
-        <div
-          className={`border-t px-3 pb-4 pt-2 sm:px-4 md:hidden ${
-            isLight ? 'border-slate-300/70' : 'border-white/10'
-          }`}
-        >
-          <div className="flex flex-col gap-2">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  `nav-link ${
-                    isActive
-                      ? isLight
-                        ? 'bg-slate-200/90 text-slate-900'
-                        : 'bg-white/20 text-white'
-                      : ''
-                  } ${isLight ? 'text-slate-700 hover:bg-slate-200/70 hover:text-slate-900' : ''}`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
+        <div className="md:hidden">
+          <button
+            type="button"
+            className="fixed inset-0 z-30 bg-slate-950/40"
+            onClick={() => setIsOpen(false)}
+            aria-label="Закрыть меню"
+          />
+          <div
+            className={`absolute left-0 right-0 top-full z-40 border-t px-3 pb-5 pt-3 shadow-2xl ${
+              isLight
+                ? 'border-slate-300/70 bg-white/95'
+                : 'border-white/10 bg-slate-950/95'
+            }`}
+          >
+            <div className="flex flex-col gap-2">
+              {navItems.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    `nav-link py-3 text-base ${
+                      isActive
+                        ? isLight
+                          ? 'bg-slate-200/90 text-slate-900'
+                          : 'bg-white/20 text-white'
+                        : ''
+                    } ${isLight ? 'text-slate-700 hover:bg-slate-200/70 hover:text-slate-900' : ''}`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
           </div>
         </div>
       ) : null}

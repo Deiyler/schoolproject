@@ -7,21 +7,33 @@ const professions = [
     title: 'Программисты',
     short: 'Используют ИИ для генерации кода, тестов и ускорения разработки.',
     full: 'ИИ помогает писать шаблонный код, находить ошибки и генерировать документацию. Но важно понимать архитектуру и проверять результат вручную.',
+    image: '/professions/programmer.png',
+    alt: 'Иллюстрация программиста',
+    icon: null,
   },
   {
     title: 'Врачи',
     short: 'ИИ помогает анализировать снимки и ускоряет диагностику.',
     full: 'Системы ИИ выявляют аномалии на КТ/МРТ и помогают в прогнозировании заболеваний, но финальное решение остаётся за врачом.',
+    image: '/professions/doctor.png',
+    alt: 'Иллюстрация врача',
+    icon: null,
   },
   {
     title: 'Дизайнеры',
     short: 'Генерируют идеи, макеты и референсы с помощью ИИ.',
     full: 'Нейросети ускоряют поиск визуальных концепций, создают черновые варианты интерфейсов и иллюстраций, а дизайнер дорабатывает стиль.',
+    image: '/professions/designer.png',
+    alt: 'Иллюстрация дизайнера',
+    icon: null,
   },
   {
     title: 'Учителя',
     short: 'Используют ИИ для подготовки материалов и персонализации обучения.',
     full: 'ИИ помогает создавать тесты, конспекты и адаптированные задания для учеников разного уровня, экономя время учителя.',
+    image: '/professions/teacher.png',
+    alt: 'Иллюстрация учителя',
+    icon: null,
   },
 ]
 
@@ -62,7 +74,7 @@ function ProfessionsPage() {
       <AnimatePresence>
         {selected ? (
           <motion.div
-            className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/75 p-2 sm:items-center sm:p-4"
+            className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/75 p-0 sm:items-center sm:p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -73,11 +85,26 @@ function ProfessionsPage() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 12, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-white/20 bg-slate-900/90 p-4 shadow-2xl backdrop-blur-xl sm:p-6"
+              className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-t-2xl border border-white/20 bg-slate-900/95 p-4 shadow-2xl backdrop-blur-xl sm:max-h-[85vh] sm:rounded-2xl sm:p-6"
               onClick={(event) => event.stopPropagation()}
             >
-              <h3 className="text-xl font-bold sm:text-2xl">{selected.title}</h3>
-              <p className="mt-3 text-sm text-slate-200/90 sm:mt-4 sm:text-base">{selected.full}</p>
+              <div className="overflow-hidden rounded-xl border border-white/15 bg-white/5">
+                {selected.image ? (
+                  <img
+                    src={selected.image}
+                    alt={selected.alt}
+                    className="h-40 w-full object-contain bg-white/90 p-2 sm:h-52"
+                  />
+                ) : (
+                  <div className="flex h-40 w-full items-center justify-center bg-gradient-to-br from-blue-500/20 to-violet-500/20 sm:h-52">
+                    {selected.icon ? <selected.icon size={72} className="text-blue-200" /> : null}
+                  </div>
+                )}
+              </div>
+              <h3 className="mt-4 text-xl font-bold sm:text-2xl">{selected.title}</h3>
+              <p className="mt-3 text-sm text-slate-200/90 sm:mt-4 sm:text-base">
+                {selected.full}
+              </p>
               <button
                 type="button"
                 onClick={() => setSelected(null)}

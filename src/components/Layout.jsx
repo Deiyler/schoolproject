@@ -13,7 +13,7 @@ function Layout() {
   return (
     <div className="min-h-screen">
       <Header isLight={isLight} onToggleTheme={() => setIsLight((prev) => !prev)} />
-      <main className="mx-auto max-w-6xl px-3 pb-8 pt-5 sm:px-4 sm:pt-7 md:px-6 md:pt-8">
+      <main className="mx-auto max-w-6xl px-3 pb-8 pt-4 sm:px-4 sm:pt-7 md:px-6 md:pt-8">
         <Outlet />
       </main>
       <Footer isLight={isLight} />
