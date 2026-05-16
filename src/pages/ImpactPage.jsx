@@ -62,7 +62,7 @@ function ImpactPage() {
           ].map((item, index) => (
             <div
               key={item.title}
-              className="rounded-xl border border-white/20 bg-white/5"
+              className="rounded-xl border border-slate-200 bg-slate-50/80"
             >
               <button
                 type="button"

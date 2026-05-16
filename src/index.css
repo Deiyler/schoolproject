@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,46 +11,80 @@ html {
 
 @layer base {
   body {
-    @apply min-h-screen overflow-x-hidden bg-slate-950 text-slate-100 antialiased transition-colors duration-300;
+    @apply min-h-screen overflow-x-hidden bg-slate-50 text-slate-800 antialiased;
     background-image:
-      radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.25) 0%, transparent 35%),
-      radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.25) 0%, transparent 40%),
-      linear-gradient(135deg, #070b1f 0%, #0f1230 45%, #17113c 100%);
-  }
-
-  body.light {
-    @apply bg-slate-100 text-slate-900;
-    background-image:
-      radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.18) 0%, transparent 35%),
-      radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.18) 0%, transparent 40%),
-      linear-gradient(135deg, #f8fbff 0%, #eef2ff 45%, #f5f3ff 100%);
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.12), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(6, 182, 212, 0.08), transparent),
+      radial-gradient(ellipse 50% 30% at 0% 100%, rgba(167, 139, 250, 0.06), transparent);
   }
 }
 
 @layer components {
   .glass-card {
-    @apply rounded-2xl border border-white/20 bg-white/10 p-4 shadow-glass backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/15 sm:p-6 sm:backdrop-blur-lg;
+    @apply rounded-2xl border border-white/80 bg-white/70 p-5 shadow-card backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft sm:p-6;
   }
 
-  .light .glass-card {
-    @apply border-slate-300/70 bg-white/70;
+  .glass-card-hover {
+    @apply glass-card hover:border-violet-200/80 hover:shadow-glow;
   }
 
-  .nav-link {
-    @apply rounded-xl px-4 py-2 text-sm font-medium text-slate-200 transition-all duration-300 hover:bg-white/15 hover:text-white active:scale-[0.99];
+  .section-title {
+    @apply text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl;
   }
 
-  .light .nav-link {
-    @apply text-slate-700 hover:bg-slate-200/70 hover:text-slate-900;
+  .section-subtitle {
+    @apply mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent;
   }
 
   .primary-btn {
-    @apply inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-violet-500 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition-all duration-300 hover:scale-105 hover:from-blue-400 hover:to-violet-400 sm:w-auto sm:px-5 sm:text-base;
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-glow active:scale-[0.98] sm:text-base;
+  }
+
+  .secondary-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:border-violet-200 hover:bg-violet-50 hover:text-violet-700 active:scale-[0.98] sm:text-base;
+  }
+
+  .nav-link {
+    @apply rounded-xl px-3 py-2 text-sm font-medium text-slate-600 transition-all duration-200 hover:bg-violet-50 hover:text-violet-700;
+  }
+
+  .nav-link-active {
+    @apply bg-violet-100 text-violet-700;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold text-violet-700;
+  }
+
+  .img-overlay-card {
+    @apply relative overflow-hidden rounded-2xl;
+  }
+
+  .img-overlay-card img {
+    @apply h-full w-full object-cover transition-transform duration-500 group-hover:scale-105;
   }
 }
 
-@media (max-width: 640px) {
-  .glass-card {
-    border-radius: 1rem;
+/* Scroll progress */
+.scroll-progress {
+  @apply fixed left-0 top-0 z-[100] h-1 origin-left bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400;
+}
+
+/* Custom cursor dot (desktop only) */
+@media (min-width: 1024px) {
+  .cursor-glow {
+    pointer-events: none;
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: left 0.15s ease-out, top 0.15s ease-out;
   }
 }

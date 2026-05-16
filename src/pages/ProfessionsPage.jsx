@@ -64,7 +64,7 @@ function ProfessionsPage() {
           >
             <h3 className="text-xl font-semibold">{job.title}</h3>
             <p className="mt-3 text-sm text-current/80">{job.short}</p>
-            <span className="mt-5 inline-block text-sm font-semibold text-blue-300">
+            <span className="mt-5 inline-block text-sm font-semibold text-violet-600">
               Подробнее
             </span>
           </motion.button>
@@ -74,7 +74,7 @@ function ProfessionsPage() {
       <AnimatePresence>
         {selected ? (
           <motion.div
-            className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/75 p-0 sm:items-center sm:p-4"
+            className="fixed inset-0 z-50 flex items-end justify-center bg-slate-900/30 p-0 backdrop-blur-sm sm:items-center sm:p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -85,7 +85,7 @@ function ProfessionsPage() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 12, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-t-2xl border border-white/20 bg-slate-900/95 p-4 shadow-2xl backdrop-blur-xl sm:max-h-[85vh] sm:rounded-2xl sm:p-6"
+              className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-t-2xl border border-slate-200 bg-white p-4 shadow-2xl sm:max-h-[85vh] sm:rounded-2xl sm:p-6"
               onClick={(event) => event.stopPropagation()}
             >
               <div className="overflow-hidden rounded-xl border border-white/15 bg-white/5">
@@ -102,7 +102,7 @@ function ProfessionsPage() {
                 )}
               </div>
               <h3 className="mt-4 text-xl font-bold sm:text-2xl">{selected.title}</h3>
-              <p className="mt-3 text-sm text-slate-200/90 sm:mt-4 sm:text-base">
+              <p className="mt-3 text-sm text-slate-600 sm:mt-4 sm:text-base">
                 {selected.full}
               </p>
               <button
