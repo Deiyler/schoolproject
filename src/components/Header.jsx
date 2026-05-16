@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
+import { Brain } from 'lucide-react'
 import { mainNav } from '../data/navigation'
-import AuthorAvatar from './AuthorAvatar'
 
 function Header({ scrolled }) {
   return (
@@ -13,7 +13,9 @@ function Header({ scrolled }) {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex min-w-0 items-center gap-2 font-bold text-slate-900">
-          <AuthorAvatar />
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 text-white shadow-md">
+            <Brain size={18} />
+          </span>
           <span className="truncate gradient-text text-sm sm:text-base">AI & Профессии</span>
         </Link>
 
