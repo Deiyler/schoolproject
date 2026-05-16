@@ -45,7 +45,7 @@ function Footer() {
             </h3>
             <div className="mt-4 flex gap-3">
               <a
-                href="https://t.me/+9re2YGk2SdY0ZGU6"
+                href="https://t.me/Slows1nl"
                 target="_blank"
                 rel="noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:border-violet-200 hover:text-violet-600"
