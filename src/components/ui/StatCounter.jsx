@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import CountUp from 'react-countup'
+import CountUpModule from 'react-countup'
+
+const CountUp = CountUpModule.default ?? CountUpModule
 
 function StatCounter({ end, suffix = '', label, duration = 2 }) {
   const ref = useRef(null)

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-import { Brain, Code2, Mail } from 'lucide-react'
+import { Brain, Send } from 'lucide-react'
 import { mainNav } from '../data/navigation'
 
 function Footer() {
   return (
-    <footer className="mt-20 border-t border-slate-200/80 bg-white/60 backdrop-blur-md">
+    <footer className="mt-16 border-t border-slate-200/80 bg-white/60 backdrop-blur-md xl:mt-20">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
@@ -42,17 +42,14 @@ function Footer() {
             </h3>
             <div className="mt-4 flex gap-3">
               <a
-                href="https://github.com/Deiyler/schoolproject"
+                href="https://web.telegram.org/a/#1864519548"
                 target="_blank"
                 rel="noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 transition hover:border-violet-200 hover:text-violet-600"
-                aria-label="GitHub"
+                aria-label="Telegram"
               >
-                <Code2 size={18} />
+                <Send size={18} />
               </a>
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400">
-                <Mail size={18} />
-              </span>
             </div>
             <p className="mt-6 text-sm text-slate-500">
               © {new Date().getFullYear()} Школьный проект, 10 класс
