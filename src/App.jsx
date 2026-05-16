@@ -9,6 +9,7 @@ import AiToolsPage from './pages/AiToolsPage'
 import QuizPage from './pages/QuizPage'
 import StatisticsPage from './pages/StatisticsPage'
 import NewsPage from './pages/NewsPage'
+import AboutPage from './pages/AboutPage'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="stats" element={<StatisticsPage />} />
         <Route path="news" element={<NewsPage />} />
         <Route path="advice" element={<AdvicePage />} />
+        <Route path="about" element={<AboutPage />} />
       </Route>
     </Routes>
   )

@@ -8,6 +8,7 @@ import {
   BarChart3,
   Newspaper,
   Lightbulb,
+  User,
 } from 'lucide-react'
 
 export const mainNav = [
@@ -20,6 +21,7 @@ export const mainNav = [
   { to: '/stats', label: 'Статистика' },
   { to: '/news', label: 'Новости' },
   { to: '/advice', label: 'Советы' },
+  { to: '/about', label: 'Об авторе' },
 ]
 
 export const mobileTabs = [
@@ -64,6 +66,13 @@ export const mobileMoreLinks = [
     description: 'Как учиться с ИИ',
     icon: Lightbulb,
     color: 'from-emerald-500 to-teal-600',
+  },
+  {
+    to: '/about',
+    label: 'Об авторе',
+    description: 'Андрей Гущин, школа № 18',
+    icon: User,
+    color: 'from-indigo-500 to-violet-600',
   },
 ]
 

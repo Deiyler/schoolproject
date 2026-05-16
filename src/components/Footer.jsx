@@ -16,8 +16,11 @@ function Footer() {
             </div>
             <p className="mt-3 text-sm leading-relaxed text-slate-600">
               Школьный проект на тему влияния искусственного интеллекта на рынок
-              труда. 10 класс.
+              труда. Автор — Андрей Гущин, МБОУ СОШ № 18, Новокузнецк.
             </p>
+            <Link to="/about" className="mt-2 inline-block text-sm font-medium text-violet-600 hover:text-violet-700">
+              Об авторе →
+            </Link>
           </div>
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
