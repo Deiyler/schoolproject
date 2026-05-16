@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import PageHeader from '../components/ui/PageHeader'
 import AnimatedSection from '../components/AnimatedSection'
+import AuthorAvatar from '../components/AuthorAvatar'
 
 const facts = [
   {
@@ -52,9 +53,7 @@ function AboutPage() {
           <div className="relative bg-gradient-to-br from-violet-600 via-purple-600 to-cyan-500 px-6 py-10 text-white sm:px-10 sm:py-12">
             <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10 blur-2xl" aria-hidden />
             <div className="relative flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
-              <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl bg-white/20 text-3xl font-extrabold shadow-lg ring-4 ring-white/30 backdrop-blur-sm sm:h-28 sm:w-28 sm:text-4xl">
-                АГ
-              </div>
+              <AuthorAvatar className="h-24 w-24 sm:h-28 sm:w-28" ring />
               <div className="max-w-2xl">
                 <p className="text-sm font-medium text-violet-100">Создатель проекта</p>
                 <h2 className="mt-1 text-2xl font-bold sm:text-3xl md:text-4xl">Андрей Гущин</h2>

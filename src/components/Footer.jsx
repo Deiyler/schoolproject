@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Brain, Send } from 'lucide-react'
+import { Send } from 'lucide-react'
+import AuthorAvatar from './AuthorAvatar'
 import { mainNav } from '../data/navigation'
 
 function Footer() {
@@ -9,9 +10,7 @@ function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-2 font-bold text-slate-900">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 text-white">
-                <Brain size={18} />
-              </span>
+              <AuthorAvatar />
               AI & Профессии
             </div>
             <p className="mt-3 text-sm leading-relaxed text-slate-600">
