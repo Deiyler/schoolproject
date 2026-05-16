@@ -2,7 +2,7 @@ export const aiTools = [
   {
     name: 'ChatGPT',
     category: 'Текст',
-    image: 'https://images.unsplash.com/photo-1676299085922-eca53aaed97c?w=600&q=80',
+    image: '/ai-tools/chatgpt.jpg',
     description: 'Универсальный чат-бот для ответов, идей, учёбы и работы с текстом.',
     purpose: 'Написание текстов, объяснение тем, помощь в учёбе и планировании.',
     pros: ['Понятный интерфейс', 'Много языков', 'Быстрые ответы'],
@@ -11,7 +11,7 @@ export const aiTools = [
   {
     name: 'Midjourney',
     category: 'Изображения',
-    image: 'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600&q=80',
+    image: '/ai-tools/midjourney.jpg',
     description: 'Генерация художественных иллюстраций и концепт-артов по описанию.',
     purpose: 'Дизайн, реклама, визуальные идеи для проектов.',
     pros: ['Высокое качество картинок', 'Уникальный стиль', 'Быстрые варианты'],
@@ -20,7 +20,7 @@ export const aiTools = [
   {
     name: 'GitHub Copilot',
     category: 'Код',
-    image: 'https://images.unsplash.com/photo-1461740680684-dccba630e2f6?w=600&q=80',
+    image: '/ai-tools/copilot.jpg',
     description: 'ИИ-помощник для программистов прямо в редакторе кода.',
     purpose: 'Автодополнение, генерация функций, ускорение разработки.',
     pros: ['Интеграция с IDE', 'Поддержка многих языков', 'Экономия времени'],
@@ -29,7 +29,7 @@ export const aiTools = [
   {
     name: 'Notion AI',
     category: 'Продуктивность',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&q=80',
+    image: '/ai-tools/notion.jpg',
     description: 'ИИ внутри Notion для заметок, планов и структурирования информации.',
     purpose: 'Конспекты, резюме документов, организация учёбы.',
     pros: ['Всё в одном месте', 'Шаблоны', 'Командная работа'],
@@ -38,7 +38,7 @@ export const aiTools = [
   {
     name: 'Grammarly',
     category: 'Текст',
-    image: 'https://images.unsplash.com/photo-1455390213244-b4432c48fbbd?w=600&q=80',
+    image: '/ai-tools/grammarly.jpg',
     description: 'Проверка грамматики, стиля и ясности текста на английском и других языках.',
     purpose: 'Эссе, письма, посты без ошибок.',
     pros: ['Подсказки в реальном времени', 'Тон текста', 'Простота'],
@@ -47,7 +47,7 @@ export const aiTools = [
   {
     name: 'Perplexity',
     category: 'Поиск',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80',
+    image: '/ai-tools/perplexity.jpg',
     description: 'Поиск с ответами и ссылками на источники.',
     purpose: 'Исследования, факты, подготовка к проектам.',
     pros: ['Источники', 'Актуальная информация', 'Краткие ответы'],

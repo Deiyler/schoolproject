@@ -3,7 +3,7 @@ export const newsItems = [
     title: 'Крупные компании расширяют внедрение генеративного ИИ',
     date: 'Март 2026',
     tag: 'Бизнес',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
+    image: '/news/business.jpg',
     excerpt:
       'Корпорации инвестируют в чат-ботов и автоматизацию документооборота, создавая новые отделы по работе с ИИ.',
   },
@@ -11,7 +11,7 @@ export const newsItems = [
     title: 'Новые правила этики ИИ в образовании',
     date: 'Февраль 2026',
     tag: 'Образование',
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
+    image: '/news/education.jpg',
     excerpt:
       'Школы и вузы обсуждают, как использовать ИИ для учёбы, не нарушая академическую честность.',
   },
@@ -19,7 +19,7 @@ export const newsItems = [
     title: 'ИИ помогает врачам в диагностике',
     date: 'Январь 2026',
     tag: 'Медицина',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
+    image: '/news/medicine.jpg',
     excerpt:
       'Системы анализа снимков ускоряют выявление заболеваний, но решение остаётся за специалистом.',
   },
@@ -27,7 +27,7 @@ export const newsItems = [
     title: 'Спрос на специалистов по данным продолжает расти',
     date: 'Декабрь 2025',
     tag: 'Карьера',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    image: '/news/career.jpg',
     excerpt:
       'Рынок труда ищет аналитиков, инженеров ML и специалистов по внедрению ИИ в бизнес-процессы.',
   },

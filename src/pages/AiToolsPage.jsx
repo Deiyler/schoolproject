@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Check, X } from 'lucide-react'
 import PageHeader from '../components/ui/PageHeader'
 import AnimatedSection from '../components/AnimatedSection'
+import SafeImage from '../components/ui/SafeImage'
 import { aiTools } from '../data/aiTools'
 
 function AiToolsPage() {
@@ -29,7 +30,11 @@ function AiToolsPage() {
             onClick={() => setSelected(tool)}
           >
             <div className="relative h-36">
-              <img src={tool.image} alt={tool.name} className="h-full w-full object-cover" />
+              <SafeImage
+                src={tool.image}
+                alt={tool.name}
+                className="h-full w-full object-cover"
+              />
               <span
                 className={`absolute left-3 top-3 rounded-lg bg-gradient-to-r ${tool.color} px-2 py-1 text-xs font-semibold text-white`}
               >
@@ -60,35 +65,54 @@ function AiToolsPage() {
               initial={{ y: 24, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 16, opacity: 0 }}
-              className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-white p-6 shadow-2xl sm:rounded-3xl"
+              className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-2xl font-bold text-slate-900">{selected.name}</h3>
+              <div className="relative h-44 overflow-hidden sm:h-52">
+                <SafeImage
+                  src={selected.image}
+                  alt={selected.name}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+                <span
+                  className={`absolute left-4 top-4 rounded-lg bg-gradient-to-r ${selected.color} px-2 py-1 text-xs font-semibold text-white`}
+                >
+                  {selected.category}
+                </span>
                 <button
                   type="button"
                   onClick={() => setSelected(null)}
-                  className="rounded-lg p-1 text-slate-400 hover:bg-slate-100"
+                  className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-slate-600 shadow-md"
+                  aria-label="Закрыть"
                 >
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
-              <p className="mt-4 text-slate-600">{selected.description}</p>
-              <p className="mt-3 text-sm">
-                <span className="font-semibold text-slate-800">Для чего: </span>
-                {selected.purpose}
-              </p>
-              <ul className="mt-4 space-y-2">
-                {selected.pros.map((pro) => (
-                  <li key={pro} className="flex items-center gap-2 text-sm text-slate-600">
-                    <Check size={16} className="text-emerald-500" />
-                    {pro}
-                  </li>
-                ))}
-              </ul>
-              <button type="button" onClick={() => setSelected(null)} className="primary-btn mt-6 w-full">
-                Закрыть
-              </button>
+
+              <div className="p-6 pt-4">
+                <h3 className="text-2xl font-bold text-slate-900">{selected.name}</h3>
+                <p className="mt-3 text-slate-600">{selected.description}</p>
+                <p className="mt-3 text-sm">
+                  <span className="font-semibold text-slate-800">Для чего: </span>
+                  {selected.purpose}
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {selected.pros.map((pro) => (
+                    <li key={pro} className="flex items-center gap-2 text-sm text-slate-600">
+                      <Check size={16} className="shrink-0 text-emerald-500" />
+                      {pro}
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  type="button"
+                  onClick={() => setSelected(null)}
+                  className="primary-btn mt-6 w-full"
+                >
+                  Закрыть
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         ) : null}

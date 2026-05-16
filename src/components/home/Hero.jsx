@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { heroStats } from '../../data/navigation'
 import StatCounter from '../ui/StatCounter'
+import SafeImage from '../ui/SafeImage'
 
 function Hero() {
   return (
@@ -25,7 +26,7 @@ function Hero() {
         </motion.div>
         <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} className="relative hidden lg:block">
           <div className="img-overlay-card group aspect-[4/3] shadow-glow">
-            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="ИИ" className="h-full w-full object-cover" />
+            <SafeImage src="/ai-tools/chatgpt.jpg" alt="ИИ" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-violet-900/40 via-transparent to-transparent" />
           </div>
           <motion.div className="absolute -bottom-4 -left-4 glass-card max-w-[200px] p-4 shadow-glow" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>

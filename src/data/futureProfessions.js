@@ -6,7 +6,7 @@ export const futureProfessions = [
     demand: 95,
     aiLevel: 98,
     category: 'tech',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
+    image: '/future/ai-engineer.jpg',
     description: 'Разработка и внедрение моделей машинного обучения в продукты компаний.',
   },
   {
@@ -16,7 +16,7 @@ export const futureProfessions = [
     demand: 88,
     aiLevel: 92,
     category: 'tech',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80',
+    image: '/future/prompt.jpg',
     description: 'Проектирование запросов и сценариев работы с большими языковыми моделями.',
   },
   {
@@ -26,7 +26,7 @@ export const futureProfessions = [
     demand: 90,
     aiLevel: 75,
     category: 'analytics',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+    image: '/future/data.jpg',
     description: 'Анализ больших данных с помощью ИИ для бизнес-решений.',
   },
   {
@@ -36,7 +36,7 @@ export const futureProfessions = [
     demand: 72,
     aiLevel: 60,
     category: 'social',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
+    image: '/future/ethics.jpg',
     description: 'Контроль безопасного и ответственного использования технологий.',
   },
   {
@@ -46,7 +46,7 @@ export const futureProfessions = [
     demand: 85,
     aiLevel: 88,
     category: 'tech',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80',
+    image: '/future/robotics.jpg',
     description: 'Создание автономных систем для производства и логистики.',
   },
   {
@@ -56,7 +56,7 @@ export const futureProfessions = [
     demand: 80,
     aiLevel: 70,
     category: 'education',
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80',
+    image: '/future/edtech.jpg',
     description: 'Персонализированное обучение с помощью ИИ-платформ.',
   },
 ]

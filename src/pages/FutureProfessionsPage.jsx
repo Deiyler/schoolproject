@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import PageHeader from '../components/ui/PageHeader'
 import AnimatedSection from '../components/AnimatedSection'
 import ProgressBar from '../components/ui/ProgressBar'
+import SafeImage from '../components/ui/SafeImage'
 import { futureProfessions, filterCategories } from '../data/futureProfessions'
 
 function FutureProfessionsPage() {
@@ -51,11 +52,10 @@ function FutureProfessionsPage() {
             className="glass-card-hover overflow-hidden p-0"
           >
             <div className="relative h-40 overflow-hidden">
-              <img
+              <SafeImage
                 src={job.image}
                 alt={job.title}
                 className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
               <span className="absolute bottom-3 left-3 rounded-lg bg-white/90 px-2 py-1 text-xs font-semibold text-violet-700">
