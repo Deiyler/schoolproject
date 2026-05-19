@@ -13,6 +13,7 @@ import {
 import PageHeader from '../components/ui/PageHeader'
 import AnimatedSection from '../components/AnimatedSection'
 import AuthorAvatar from '../components/AuthorAvatar'
+import SigmaBearSection from '../components/SigmaBearSection'
 
 const facts = [
   {
@@ -95,6 +96,8 @@ function AboutPage() {
           </div>
         </div>
       </AnimatedSection>
+
+      <SigmaBearSection />
 
       <AnimatedSection className="grid gap-4 sm:gap-6">
         {facts.map((item, i) => (
