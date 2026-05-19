@@ -42,7 +42,7 @@ const projectPoints = [
 
 function AboutPage() {
   return (
-    <div className="space-y-8 sm:space-y-10">
+    <div className="min-w-0 space-y-6 sm:space-y-10">
       <PageHeader
         badge="Автор"
         title="Обо мне"
